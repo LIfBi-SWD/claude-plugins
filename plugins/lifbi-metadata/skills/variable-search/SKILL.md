@@ -32,6 +32,7 @@ Alle Filter erwarten **IDs, kommagetrennt**. Mehrere Werte innerhalb eines Filte
 | `--target` | Befragte Gruppe | 1 Zielperson, 2 Eltern, 3 Erzieher/Lehrkräfte, 8 Einrichtungsleitung, 0 ohne |
 | `--year` | Erhebungsjahr | Jahreszahl (2007–2025), 0 = ohne Zuordnung |
 | `--wave` | Welle | Wellennummer 0–19 |
+| `--instrument` | Erhebungsinstrument (Fragebogen) | `InstrumentId` aus `item-details --aspect questions` |
 | `--concept` | Themenbereich | 10000 Kompetenzen, 10113 Lernumwelten, 10353 Bildungsbez. Ressourcen/Einstellungen, 10595 Demografie & Biografie, 10853 Individuum & Persönlichkeit, 10948 Migration, 10060 Gesellschaft/Familie/Teilhabe, 11167 Methodeninformation, 0 ohne |
 
 Diese Tabelle dient nur der Orientierung. Bei Unsicherheit oder für Werte, die hier fehlen, ermittelst du die aktuellen IDs mit `facets`. Die Wellennummer bezieht sich immer auf eine Kohorte. „Welle 3“ ist deshalb nur zusammen mit `--cohort` sinnvoll interpretierbar.
@@ -50,6 +51,7 @@ Diese Tabelle dient nur der Orientierung. Bei Unsicherheit oder für Werte, die 
 - Fasse identische Fragetexte zusammen. Häufig gehören mehrere Items zu derselben Frage, z. B. a), b), c).
 - Varianten wie `_v1` oder `_R` sind unterschiedliche Variablen. Erwähne sie, statt sie zu verwerfen.
 - Erfinde keine Variablen, Wellen oder Kohortenzuordnungen, die die API nicht geliefert hat. Felder wie `cohorts` und `waves` sind in den Treffern meist leer. Kohorten- oder Wellenzugehörigkeit leitest du nur aus den gesetzten Filtern ab.
+- Nenne zu jedem Treffer die **Item-ID** (`id`). Mit ihr liefert der Skill `item-details` Antwortschema, Wellen, Fragetexte, SUF-Dateien und Referenzen.
 - Verweise für Details auf https://variablesearch.lifbi.de.
 
 ## Direkte API (Referenz)

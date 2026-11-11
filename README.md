@@ -16,6 +16,7 @@ In Claude Code:
 | Plugin | Skills | Beschreibung |
 |---|---|---|
 | `lifbi-metadata` | `variable-search` | Suche nach Variablen und Fragen über variablesearch.lifbi.de |
+| | `item-details` | Details zu einem Item: Antwortschema, Wellen, Fragetexte, Konzepte, SUF-Dateien, Referenzen |
 
 ## Struktur
 

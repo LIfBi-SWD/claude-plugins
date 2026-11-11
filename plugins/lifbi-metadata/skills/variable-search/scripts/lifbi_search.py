@@ -68,7 +68,11 @@ def post(path, body, lang):
     )
     try:
         with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
-            return json.loads(resp.read().decode("utf-8"))
+            raw = resp.read().decode("utf-8", "replace")
+            if raw.lstrip().startswith("<"):
+                sys.exit("Der Server lieferte HTML statt JSON (Bot-Schutz/Rate-Limit). "
+                         "Bitte kurz warten und keine Anfragen in schneller Folge stellen.")
+            return json.loads(raw) if raw.strip() else []
     except urllib.error.HTTPError as e:
         sys.exit(f"API-Fehler {e.code} bei {path}: {e.read().decode('utf-8', 'replace')[:500]}")
     except urllib.error.URLError as e:
@@ -135,8 +139,9 @@ def cmd_facets(args):
 
 
 def main():
-    if hasattr(sys.stdout, "reconfigure"):
-        sys.stdout.reconfigure(encoding="utf-8")
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8")
 
     common = argparse.ArgumentParser(add_help=False)
     common.add_argument("query", nargs="?", default="", help="Suchtext (leer = alles)")
