@@ -7,7 +7,7 @@
     "url": "https://www.lifbi.de"
   },
   "homepage": "https://variablesearch.lifbi.de",
-  "repository": "https://github.com/LIfBi/claude-plugins",
+  "repository": "https://github.com/LIfBi-SWD/claude-plugins",
   "license": "MIT",
   "keywords": ["lifbi", "neps", "metadata", "variables"]
 }

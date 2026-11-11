@@ -7,7 +7,7 @@ Claude-Code-Plugin-Marketplace des Leibniz-Instituts für Bildungsverläufe (LIf
 In Claude Code:
 
 ```
-/plugin marketplace add LIfBi/claude-plugins
+/plugin marketplace add LIfBi-SWD/claude-plugins
 /plugin install lifbi-metadata@lifbi
 ```
 
