@@ -1,0 +1,21 @@
+{
+  "name": "lifbi",
+  "owner": {
+    "name": "LIfBi – Leibniz-Institut für Bildungsverläufe",
+    "url": "https://www.lifbi.de"
+  },
+  "metadata": {
+    "description": "Claude-Code-Plugins und Skills des LIfBi (z. B. Suche in NEPS-Metadaten).",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "lifbi-metadata",
+      "source": "./plugins/lifbi-metadata",
+      "description": "Suche nach Variablen, Fragen und Instrumenten über die LIfBi-Variablensuche.",
+      "version": "0.1.0",
+      "category": "research",
+      "keywords": ["lifbi", "neps", "metadata", "variables", "research-data"]
+    }
+  ]
+}

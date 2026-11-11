@@ -1,0 +1,13 @@
+{
+  "name": "lifbi-metadata",
+  "version": "0.1.0",
+  "description": "Suche nach Variablen, Fragen und Instrumenten über die LIfBi-Variablensuche (variablesearch.lifbi.de).",
+  "author": {
+    "name": "LIfBi",
+    "url": "https://www.lifbi.de"
+  },
+  "homepage": "https://variablesearch.lifbi.de",
+  "repository": "https://github.com/LIfBi/claude-plugins",
+  "license": "MIT",
+  "keywords": ["lifbi", "neps", "metadata", "variables"]
+}
