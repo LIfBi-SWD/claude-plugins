@@ -15,7 +15,8 @@ der LIfBi-Studien (NEPS, ReGES, INSIDE, TAEPS) suchen – über die API der
 
 ## Voraussetzungen
 
-- **Claude Code** ist installiert und eingerichtet.
+- **Claude Code** ist installiert und eingerichtet. [https://code.claude.com/docs/de/quickstart](https://code.claude.com/docs/de/quickstart)
+- (Alternativ) **Copilot CLI** [https://github.com/github/copilot-cli](https://github.com/github/copilot-cli)
 - (optional, aber empfohlen) **Python 3.8 oder neuer** ist installiert und im Terminal als `python` (oder `python3`) aufrufbar.
   Zusätzliche Pakete werden nicht benötigt.
 
