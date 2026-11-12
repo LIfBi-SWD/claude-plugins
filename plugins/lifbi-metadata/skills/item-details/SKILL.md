@@ -5,7 +5,7 @@ description: Liefert Details zu einer einzelnen LIfBi-/NEPS-Variable (Item) aus 
 
 # LIfBi Item-Details
 
-Zeigt Detailinformationen zu **einem** Item der LIfBi-Variablensuche. Das Item wird über seine
+Zeigt Detailinformationen zu **einem** Item bzw. **einer** SUF-Variable der LIfBi-Variablensuche. Das Item wird über seine
 **Item-ID** angesprochen. Das ist das Feld `id` eines Treffers aus der Suche (Skill `variable-search`),
 **nicht** der Variablenname.
 
