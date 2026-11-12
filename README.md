@@ -12,6 +12,8 @@ der LIfBi-Studien (NEPS, ReGES, INSIDE, TAEPS) suchen – über die API der
 |---|---|---|
 | `lifbi-metadata` | `variable-search` | Variablen und Fragen suchen, gefiltert nach Projekt, Kohorte, Bildungsetappe, Zielgruppe, Jahr, Welle, Themenbereich |
 | | `item-details` | Details zu einer Variable: Antwortschema, Wellen, Fragetexte, Konzepte, SUF-Dateien, Referenzen |
+| | `instrument-search` | Erhebungsinstrumente (Fragebögen, Interviews, Tests) suchen, gefiltert nach Projekt, Kohorte, Etappe, Welle, Jahr |
+| | `instrument-details` | Aufbau eines Instruments: Kapitel, Items, Variablen, Antwortschemata, Filterführung |
 
 ## Voraussetzungen
 
@@ -51,6 +53,10 @@ die LIfBi-Skills braucht:
 
 > Woher stammt die Skala zu Item 104570, was sollte ich zitieren?
 
+> Welche Fragebögen gab es in NEPS SC6 in Welle 9?
+
+> Wie ist der Lehrkräftefragebogen der SC8 in Welle 1 aufgebaut? Welche Fragen zu digitalen Medien enthält er?
+
 > Search NEPS for variables on reading competence in grade 9. *(funktioniert auch auf Englisch)*
 
 Ein typischer Ablauf:
@@ -70,6 +76,8 @@ Wenn du einen Skill gezielt starten willst, geht das auch als Slash-Befehl:
 /lifbi-metadata:variable-search Einkommen in SC6
 /lifbi-metadata:variable-search Kann man mit Daten der SC6 den BMI eines Teilnehmers berechnen?
 /lifbi-metadata:item-details ts23412_v1
+/lifbi-metadata:instrument-search Eltern in SC2
+/lifbi-metadata:instrument-details 970
 ```
 
 ### Berechtigungen

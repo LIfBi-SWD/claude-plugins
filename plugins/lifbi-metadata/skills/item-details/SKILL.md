@@ -5,9 +5,12 @@ description: Liefert Details zu einer einzelnen LIfBi-/NEPS-Variable (Item) aus 
 
 # LIfBi Item-Details
 
-Zeigt Detailinformationen zu **einem** Item bzw. **einer** SUF-Variable der LIfBi-Variablensuche. Das Item wird über seine
-**Item-ID** angesprochen. Das ist das Feld `id` eines Treffers aus der Suche (Skill `variable-search`),
-**nicht** der Variablenname.
+Zeigt Detailinformationen zu **einem** Item bzw. **einer** SUF-Variable der LIfBi-Variablensuche. Das Item wird
+entweder über seine **Item-ID** angesprochen, also das Feld `id` eines Treffers aus `variable-search`, oder über
+seinen **Variablennamen**, z. B. `ts23412_v1`.
+
+Achtung: Die `Item`-Nummern aus `instrument-details` sind *Instrument-Item-IDs* und funktionieren hier **nicht**.
+Nutze in diesem Fall den Variablennamen.
 
 ## Werkzeug
 
@@ -17,8 +20,8 @@ Skript `scripts/lifbi_item.py` im Verzeichnis dieses Skills (nur Python-Standard
 python <skill-dir>/scripts/lifbi_item.py <Item-ID|Variablenname> [--aspect a,b,...] [--lang de|en] [--json]
 ```
 
-Statt einer ID kann auch ein **Variablenname** übergeben werden, z. B. `ts23412_v1`. Das Skript ermittelt
-die ID dann über die Suche. Ist der Name mehrdeutig, listet es die Kandidaten auf.
+Bei einem Variablennamen ermittelt das Skript die Item-ID selbst über die Suche. Ist der Name mehrdeutig,
+listet es die Kandidaten mit ihren IDs auf.
 
 ### Aspekte (`--aspect`, Standard: alle)
 
@@ -37,9 +40,9 @@ angezeigt. Das ist normal, besonders bei `references`.
 
 ## Vorgehen
 
-1. Item-ID ermitteln:
-   - Steht sie aus einer vorherigen Suche schon im Gespräch, nimm sie direkt.
-   - Ist nur ein Variablenname bekannt, übergib ihn direkt an das Skript.
+1. Item festlegen:
+   - Steht die Item-ID aus einer vorherigen Suche schon im Gespräch, nimm sie direkt.
+   - Ist ein Variablenname bekannt, z. B. aus `instrument-details`, übergib ihn direkt an das Skript.
    - Ist nur ein Thema bekannt, suche zuerst mit dem Skill `variable-search` und lass bei mehreren
      Treffern den Nutzer wählen.
 2. Skript mit den passenden Aspekten ausführen. Sprache: `--lang de` als Standard, `en` bei englischen Anfragen.
@@ -48,8 +51,8 @@ angezeigt. Das ist normal, besonders bei `references`.
    - Wellen als „SC6: Welle 1, 3, 5“.
    - Für SUFs Release, Dateiname und DOI nennen. Mit Release und Datei finden Nutzer die Variable im Datensatz.
    - Bei Referenzen die DOI als Link `https://doi.org/<doi>` ausgeben.
-4. Die `InstrumentId` aus `questions` kann in der Suche als Filter dienen
-   (`variable-search` → `--instrument <id>`). So findet man weitere Items desselben Fragebogens.
+4. Die `InstrumentId` aus `questions` führt zum Fragebogen: `instrument-details <id>` zeigt Aufbau und
+   Kontext der Frage, `variable-search --instrument <id>` findet weitere Items desselben Fragebogens.
 
 Erfinde keine Details, die die API nicht liefert. Fehlt etwas, sag das und verweise auf
 https://variablesearch.lifbi.de.

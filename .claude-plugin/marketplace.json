@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Claude-Code-Plugins und Skills des LIfBi (z. B. Suche in NEPS-Metadaten).",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
       "name": "lifbi-metadata",
       "source": "./plugins/lifbi-metadata",
-      "description": "Suche nach Variablen in der LIfBi-Variablensuche und Details zu einzelnen Items (Antwortschema, Wellen, SUFs, Referenzen).",
-      "version": "0.2.0",
+      "description": "Suche nach Variablen in der LIfBi-Variablensuche, Details zu einzelnen Items (Antwortschema, Wellen, SUFs, Referenzen) sowie Suche und Aufbau von Erhebungsinstrumenten.",
+      "version": "0.3.0",
       "category": "research",
       "keywords": ["lifbi", "neps", "metadata", "variables", "research-data"]
     }

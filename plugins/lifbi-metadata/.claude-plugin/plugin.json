@@ -1,7 +1,7 @@
 {
   "name": "lifbi-metadata",
-  "version": "0.2.0",
-  "description": "Suche nach Variablen, Fragen und Instrumenten über die LIfBi-Variablensuche (variablesearch.lifbi.de).",
+  "version": "0.3.0",
+  "description": "Suche nach Variablen, Items und Erhebungsinstrumenten über die LIfBi-Variablensuche (variablesearch.lifbi.de).",
   "author": {
     "name": "LIfBi",
     "url": "https://www.lifbi.de"
