@@ -14,6 +14,7 @@ der LIfBi-Studien (NEPS, ReGES, INSIDE, TAEPS) suchen – über die API der
 | | `item-details` | Details zu einer Variable: Antwortschema, Wellen, Fragetexte, Konzepte, SUF-Dateien, Referenzen |
 | | `instrument-search` | Erhebungsinstrumente (Fragebögen, Interviews, Tests) suchen, gefiltert nach Projekt, Kohorte, Etappe, Welle, Jahr |
 | | `instrument-details` | Aufbau eines Instruments: Kapitel, Items, Variablen, Antwortschemata, Filterführung |
+| | `filter-check` | Filter eines Instruments gegen die [Auszeichnungs-Konventionen](https://markup.st.lifbi.de/#bedingte-inhalte) prüfen – Fehlerliste mit Verbesserungsvorschlägen (Tabelle + CSV) |
 
 ## Voraussetzungen
 
@@ -57,6 +58,8 @@ die LIfBi-Skills braucht:
 
 > Wie ist der Lehrkräftefragebogen der SC8 in Welle 1 aufgebaut? Welche Fragen zu digitalen Medien enthält er?
 
+> Prüfe die Filter im Instrument 970 und gib mir eine Fehlerliste mit Verbesserungsvorschlägen.
+
 > Search NEPS for variables on reading competence in grade 9. *(funktioniert auch auf Englisch)*
 
 Ein typischer Ablauf:
@@ -78,6 +81,7 @@ Wenn du einen Skill gezielt starten willst, geht das auch als Slash-Befehl:
 /lifbi-metadata:item-details ts23412_v1
 /lifbi-metadata:instrument-search Eltern in SC2
 /lifbi-metadata:instrument-details 970
+/lifbi-metadata:filter-check 970
 ```
 
 ### Berechtigungen
