@@ -47,10 +47,13 @@ class BlockedError(Exception):
 
 def request(url, body=None):
     data = json.dumps(body).encode("utf-8") if body is not None else None
+    # No "Accept: application/json" here: with that header the Items endpoints
+    # return the JSON payload double-encoded as a JSON string.
+    headers = {"Content-Type": "application/json"} if data is not None else {}
     req = urllib.request.Request(
         url,
         data=data,
-        headers={"Content-Type": "application/json", "Accept": "application/json"},
+        headers=headers,
         method="POST" if body is not None else "GET",
     )
     try:
@@ -66,7 +69,15 @@ def request(url, body=None):
         raise BlockedError(
             "Der Server lieferte HTML statt JSON (Bot-Schutz/Rate-Limit oder ungültige ID). "
             "Bitte kurz warten und die ID prüfen; ggf. im Browser auf variablesearch.lifbi.de öffnen.")
-    return json.loads(raw)
+    return parse_json(raw)
+
+
+def parse_json(raw):
+    """Parse JSON, unwrapping payloads the server double-encoded as a JSON string."""
+    data = json.loads(raw)
+    while isinstance(data, str) and data.lstrip()[:1] in ("{", "["):
+        data = json.loads(data)
+    return data
 
 
 def resolve_id(ref, lang):
